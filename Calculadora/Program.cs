@@ -1,13 +1,14 @@
 ﻿using EspacioCalculadora;
 Calculadora calc = new Calculadora();
+int operacion;
 Console.WriteLine("\nCalculadora:");
-Console.WriteLine("\nEscriba una operacion: 1. Suma, 2. Resta, 3. Multiplicacion, 4. Division, 5. Limpiar, 6. Salir");
-bool excepcion = int.TryParse(Console.ReadLine(), out int operacion);
 Console.WriteLine("\nEscriba un numero: ");
 double.TryParse(Console.ReadLine(), out double valor);
 do
 {
-    if (!excepcion)
+    Console.WriteLine("\nEscriba una operacion: 1. Suma, 2. Resta, 3. Multiplicacion, 4. Division, 5. Limpiar, 6. Salir");
+    bool excepcion = int.TryParse(Console.ReadLine(), out operacion);
+    if (!excepcion || operacion < 1 || operacion > 6)
     {
         Console.WriteLine("Error, no ingresó una operacion valida");
     }
@@ -33,7 +34,8 @@ do
                 break;
         }
     }
-    Console.WriteLine("\nEscriba una operacion: 1. Suma, 2. Resta, 3. Multiplicacion, 4. Division, 5. Limpiar, 6. Salir");
-    excepcion = int.TryParse(Console.ReadLine(), out operacion);
     
+
 } while (operacion != 6);
+
+Console.WriteLine("\nel dato con el que ha estado operando su valor es: " + calc.Resultado);

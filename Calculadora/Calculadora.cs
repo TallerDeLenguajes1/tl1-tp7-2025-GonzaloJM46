@@ -2,7 +2,7 @@ namespace EspacioCalculadora;
 
 public class Calculadora
 {
-    double dato = 0;
+    double dato = 1;
 
     public double Resultado { get => dato; }
     public void Sumar(double termino) {
