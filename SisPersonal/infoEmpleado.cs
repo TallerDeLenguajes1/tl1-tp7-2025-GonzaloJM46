@@ -40,17 +40,10 @@ public class Empleado
         return actual.Year - fechaDeNacimiento.Year;
     }
 
-    public void Jubilacion()
+    public int Jubilacion()
     {
         int edadEmpleado = Edad();
-        if (edadEmpleado >= 65)
-        {
-            Console.WriteLine("\nEl empleado ya esta en edad de jubilarse");
-        }
-        else
-        {
-            Console.WriteLine("\nAl empleado le faltan" + (65 - edadEmpleado) + " años para jubilarse");
-        }
+        return 65 - edadEmpleado;
     }
 
     public double Salario()
